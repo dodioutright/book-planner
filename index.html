@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Planner Pribadi</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Geist&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0V4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+        body {
+            font-family: 'Geist', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-900">
+    <div id="app" class="flex min-h-screen">
+        <div id="sidebar-overlay" class="fixed inset-0 bg-black bg-opacity-50 z-40 hidden md:hidden"></div>
+
+        <aside id="sidebar" class="fixed inset-y-0 left-0 w-64 bg-white shadow-lg p-6 z-50 transform -translate-x-full md:relative md:translate-x-0 md:w-64 transition-transform duration-300 ease-in-out">
+            <h1 class="text-2xl font-bold mb-8 text-center">Book Planner</h1>
+            <nav>
+                <ul>
+                    <li class="mb-4">
+                        <a href="#" id="nav-dashboard" class="flex items-center text-lg text-gray-700 hover:text-blue-600 hover:bg-blue-50 p-2 rounded-lg transition-colors duration-200">
+                            <i class="fas fa-home mr-3"></i> Dashboard
+                        </a>
+                    </li>
+                    <li class="mb-4">
+                        <a href="#" id="nav-daily" class="flex items-center text-lg text-gray-700 hover:text-blue-600 hover:bg-blue-50 p-2 rounded-lg transition-colors duration-200">
+                            <i class="fas fa-calendar-day mr-3"></i> Daily Planner
+                        </a>
+                    </li>
+                    <li class="mb-4">
+                        <a href="#" id="nav-budget" class="flex items-center text-lg text-gray-700 hover:text-blue-600 hover:bg-blue-50 p-2 rounded-lg transition-colors duration-200">
+                            <i class="fas fa-wallet mr-3"></i> Budget Planner
+                        </a>
+                    </li>
+                    <li class="mb-4">
+                        <a href="#" id="nav-meal" class="flex items-center text-lg text-gray-700 hover:text-blue-600 hover:bg-blue-50 p-2 rounded-lg transition-colors duration-200">
+                            <i class="fas fa-utensils mr-3"></i> Weekly Meal
+                        </a>
+                    </li>
+                    <li class="mb-4">
+                        <a href="#" id="nav-important" class="flex items-center text-lg text-gray-700 hover:text-blue-600 hover:bg-blue-50 p-2 rounded-lg transition-colors duration-200">
+                            <i class="fas fa-calendar-alt mr-3"></i> Important Date
+                        </a>
+                    </li>
+                    <li class="mb-4">
+                        <a href="#" id="nav-habit" class="flex items-center text-lg text-gray-700 hover:text-blue-600 hover:bg-blue-50 p-2 rounded-lg transition-colors duration-200">
+                            <i class="fas fa-check-double mr-3"></i> Habit Tracker
+                        </a>
+                    </li>
+                    <li class="mb-4">
+                        <a href="#" id="nav-yearly" class="flex items-center text-lg text-gray-700 hover:text-blue-600 hover:bg-blue-50 p-2 rounded-lg transition-colors duration-200">
+                            <i class="fas fa-bullseye mr-3"></i> Yearly Goal
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+
+        <div class="flex-1 flex flex-col">
+            <header class="bg-white shadow-md p-4 md:hidden flex items-center justify-between">
+                <h2 class="text-xl font-bold">Book Planner</h2>
+                <button id="mobile-menu-button" class="text-gray-700 text-2xl">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </header>
+
+            <main id="content-area" class="flex-1 p-8 md:ml-0">
+                <h2 class="text-3xl font-bold mb-6">Dashboard</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <h3 class="text-xl font-semibold mb-4">Daily Snapshot</h3>
+                        <p class="text-gray-700">Tanggal: <span id="current-date"></span></p>
+                        <p class="text-gray-700">Today Goal: <span id="today-goal-summary">Belum ada</span></p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <h3 class="text-xl font-semibold mb-4">Ringkasan Anggaran Bulan Ini</h3>
+                        <p class="text-gray-700">Pemasukan: <span id="income-summary">Rp 0</span></p>
+                        <p class="text-gray-700">Pengeluaran: <span id="expense-summary">Rp 0</span></p>
+                        <p class="text-gray-700">Sisa Anggaran: <span id="balance-summary">Rp 0</span></p>
+                    </div>
+                </div>
+            </main>
+        </div>
+
+    <script type="module" src="main.js"></script>
+</body>
+</html>
